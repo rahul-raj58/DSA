@@ -1,5 +1,8 @@
 class Solution {
     public int[] rearrangeArray(int[] nums) {
+
+        // O(2N)
+
         // int n = nums.length;
         // int pos[] = new int[n/2];
         // int neg[] = new int[n/2];
@@ -18,7 +21,7 @@ class Solution {
         // }
         // return nums;
 
-        // O(n) 
+        //TC -->  O(n) 
         int res[] = new int[nums.length];
         int p = 0;
         int q = 1;
