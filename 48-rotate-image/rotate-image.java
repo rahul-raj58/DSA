@@ -16,7 +16,7 @@ class Solution {
         //     }
         // }
 
-         for (int i=0; i<matrix.length; i++) {
+         for (int i=0; i<matrix.length-1; i++) {
             for (int j=i; j<matrix[0].length; j++) {
                 int temp = 0;
                 temp = matrix[i][j];
