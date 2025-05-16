@@ -26,25 +26,47 @@ class Solution {
 
 
         // TC --> O(n)
+        // int n = nums.length; 
+        // Arrays.sort(nums);
+        // int longest = 0;
+        // int countCurr = 0; 
+        // int lastSmaller = Integer.MIN_VALUE;
+        // for(int i=0; i<n; i++){
+        //     if(nums[i]-1 == lastSmaller){
+        //         countCurr++;
+        //         lastSmaller = nums[i];
+        //     }
+        //     else if(nums[i] != lastSmaller){
+        //         countCurr = 1;
+        //         lastSmaller = nums[i];
+
+        //     }
+        //     longest = Math.max(longest,countCurr);
+
+        // }
+        // return longest;
+
         int n = nums.length; 
-        Arrays.sort(nums);
-        int longest = 0;
-        int countCurr = 0; 
-        int lastSmaller = Integer.MIN_VALUE;
-        for(int i=0; i<n; i++){
-            if(nums[i]-1 == lastSmaller){
-                countCurr++;
-                lastSmaller = nums[i];
-            }
-            else if(nums[i] != lastSmaller){
-                countCurr = 1;
-                lastSmaller = nums[i];
-
-            }
-            longest = Math.max(longest,countCurr);
-
+        if(n==0){
+            return 0;
         }
-        return longest;
+        int longest = 1;
+        Set<Integer> set = new HashSet<>();
+        for(int i=0; i<n; i++){
+            set.add(nums[i]);
+        }
+        for(int it: set){
+            if(!set.contains(it-1)){
+                int cnt = 1;
+                int x = it; 
+                while(set.contains(x+1)){
+                    x++;
+                    cnt++;
+                }
+                longest = Math.max(longest,cnt);
+            }
+        }
+        return longest; 
 
     }
 }
