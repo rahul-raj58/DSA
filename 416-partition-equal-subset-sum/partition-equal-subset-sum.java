@@ -24,7 +24,7 @@ class Solution {
             return arr[0] == sum;
         }
         if(dp[ind][sum] != -1){
-            return dp[ind][sum] == 0 ? false : true;
+            return dp[ind][sum] == 1 ? true : false;
         }
         boolean notTake = helper(ind-1,arr,sum,dp);
         boolean take = false;
