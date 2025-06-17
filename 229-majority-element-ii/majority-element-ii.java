@@ -13,6 +13,7 @@ class Solution {
             if(count > n/3){
                 list.add(nums[i]);
             }
+            if (list.size() == 2) break;
         }
         return list;
     }
